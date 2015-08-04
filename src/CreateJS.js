@@ -393,6 +393,8 @@
      * @return {object}
      *
      * @tutorial {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html#utilCreate}
+     *
+     * @see  {@link util.event|inherit namespace util.event}
      * 
      * @example
      * var myObject = Crisp.utilCreate().objIni();

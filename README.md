@@ -1,4 +1,4 @@
-# Crisp.CreatJS
+# Crisp.CreateJS
 represent a Class design pattern for JavaScript included multible namespaces, options and functions
 
 [![Build Status](https://travis-ci.org/OpenCrisp/Crisp.CreateJS.svg)](https://travis-ci.org/OpenCrisp/Crisp.CreateJS)
@@ -31,6 +31,10 @@ What is CRISP? Configuration Result In Simplified Programming
 Use the Node Package Manager (npm) for install crisp-create
 
     npm install crisp-create
+
+or use all of OpenCrisp Utils
+
+    npm install crisp-util
 
 ### Browsers
 ```html

@@ -1,4 +1,4 @@
-/*! OpenCrisp CreateJS - v0.1.0 - 2015-08-03
+/*! OpenCrisp CreateJS - v0.1.0 - 2015-08-04
 * http://opencrisp.wca.at
 * Copyright (c) 2015 Fabian Schmid; Licensed MIT */
 (function($$) {
@@ -387,6 +387,8 @@
      * @return {object}
      *
      * @tutorial {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html#utilCreate}
+     *
+     * @see  {@link util.event|inherit namespace util.event}
      * 
      * @example
      * var myObject = Crisp.utilCreate().objIni();
