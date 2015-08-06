@@ -250,6 +250,7 @@
     }
 
 
+
     /**
      * {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html|use CreateJS}
      * 
@@ -338,7 +339,7 @@
          * @memberOf module:CreateJS.prototype
          */
         objData: function( data ) {
-            return this.xEach({
+            return ( this.objNs('util.props') ? this : data ).xEach({
                 self: {
                     obj: this,
                     data: data
@@ -362,6 +363,23 @@
             function Clone() {}
             Clone.prototype = this;
             return new Clone();
+        },
+
+        /**
+         * check of ns name is inherit on this object
+         * @param  {external:String} ns name string of namespace
+         * @return {external:Boolean}
+         * 
+         * @memberOf module:CreateJS.prototype
+         * 
+         * @tutorial {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html#objNs}
+         *
+         * @example
+         * var myObject = Crisp.utilCreate().objIni();
+         * myObject.objNs('util.create');    // true
+         */
+        objNs: function( ns ) {
+            return this._('create').ns.indexOf( ns ) !== -1;
         }
 
     };
@@ -422,7 +440,7 @@
      * myObject.xTo();  // '{"b":"B"}'
      */
     $$.utilCreate = function( option ) {
-        var Base, inherit, object;
+        var Base, inherit, ns, object;
 
         option = option || {};
 
@@ -438,7 +456,7 @@
             pt: []      // multiple inherit prototypes
         };
 
-        ['util.create'].xAdd( option.ns ).xEach({
+        ns = ['util.create'].xAdd( option.ns ).xEach({
             self: inherit,
             success: createNsEach
         });
@@ -448,6 +466,7 @@
         object = new Base();
 
         utilProperty.call( object, optionName('create'), { proVal: {
+            ns:         ns, 
             options:    inherit.op.xAdd( option.options ),
             properties: inherit.pp.xAdd( option.properties )
         }});

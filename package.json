@@ -2,7 +2,7 @@
 	"name": "crisp-create",
 	"title": "OpenCrisp CreateJS",
 	"description": "represent a Class design pattern for JavaScript included multible namespaces, options and functions",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"homepage": "http://opencrisp.wca.at",
 	"author": {
 		"name": "Fabian Schmid",

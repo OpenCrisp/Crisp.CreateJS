@@ -23,6 +23,7 @@ What is CRISP? Configuration Result In Simplified Programming
     * [Options Example](#options-example)
     * [Properties Example](#properties-example)
     * [Prototypes Example](#prototypes-example)
+    * [objNs Example](#objns-example)
   * [Links](#links)
 
 ## Getting Started
@@ -84,6 +85,13 @@ var myObject = Crisp.utilCreate({
 myObject.c();    // 'C'
 myObject.xTo();  // '{}'
 ```
+
+### objNs Example
+```javascript
+var myObject = Crisp.utilCreate().objIni();
+myObject.objNs('util.create');    // true
+```
+'util.create' is an default namespace
 
 
 ## Links

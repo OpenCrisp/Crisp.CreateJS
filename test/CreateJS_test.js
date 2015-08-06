@@ -159,7 +159,7 @@ exports['utilCreate prototypes'] = function(assert) {
 // ## Inherit
 exports['utilCreate inherit'] = function(assert) {
     var done = assert.done || assert.async();
-    assert.expect(4);
+    assert.expect(5);
 
     Crisp.ns('test.util-create01', {
         options: {
@@ -185,6 +185,20 @@ exports['utilCreate inherit'] = function(assert) {
     assert.strictEqual( myObject.c(), 'C' );
 
     assert.deepEqual( myObject.xTo(), '{"b":"B"}' );
+
+    assert.ok( myObject.objNs('test.util-create01') );
+
+    done();
+};
+
+// ## objNs
+exports['utilCreate objNs'] = function(assert) {
+    var done = assert.done || assert.async();
+    assert.expect(1);
+
+    var myObject = Crisp.utilCreate().objIni();
+
+    assert.ok( myObject.objNs('util.create') );
 
     done();
 };
