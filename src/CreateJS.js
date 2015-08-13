@@ -293,7 +293,7 @@
         _: function( option ) {
             var value, name;
 
-            if ( $$.isType( option, 'String' ) ) {
+            if ( $$.type.call( option, 'String' ) ) {
                 return this[ optionName( option ) ];
             }
 
