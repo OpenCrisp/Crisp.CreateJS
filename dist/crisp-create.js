@@ -1,4 +1,4 @@
-/*! OpenCrisp CreateJS - v0.2.0 - 2015-08-12
+/*! OpenCrisp CreateJS - v0.2.1 - 2015-08-13
 * http://opencrisp.wca.at
 * Copyright (c) 2015 Fabian Schmid; Licensed MIT */
 (function($$) {
