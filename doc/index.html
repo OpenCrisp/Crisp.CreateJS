@@ -47,40 +47,79 @@
 <p><a href="https://travis-ci.org/OpenCrisp/Crisp.CreateJS"><img src="https://travis-ci.org/OpenCrisp/Crisp.CreateJS.svg" alt="Build Status"></a>
 <a href="https://www.npmjs.com/package/crisp-create"><img src="https://img.shields.io/npm/dm/crisp-create.svg" alt="NPM Downloads"></a>
 <a href="https://www.npmjs.com/package/crisp-create"><img src="https://img.shields.io/npm/v/crisp-create.svg" alt="NPM Version"></a></p>
-<p>What is CRISP? Configuration Result In Simplified Programming</p>
-<ul>
-<li>Options</li>
-<li>Properties</li>
-<li>Prototypes</li>
-<li>Inherit namespaces</li>
-<li>Clone Object</li>
-<li>Once create temporary Base function with inherits</li>
-</ul>
-<h2>Index Table</h2><ul>
+<pre class="prettyprint source lang-javascript"><code>// create object
+var myObject = Crisp.utilCreate();
+
+// initialice object
+myObject.objIni();
+
+// get object option
+myObject._('myoption');
+
+// clone object without data
+var cloneObject = myObject.objClone();</code></pre><h2>Index Table</h2><ul>
 <li><a href="#getting-started">Getting Started</a><ul>
-<li><a href="#nodejs">NodeJS</a></li>
-<li><a href="#browsers">Browsers</a></li>
+<li><a href="#server-nodes">Server-Nodes</a></li>
+<li><a href="#web-clients">Web-Clients</a></li>
+<li><a href="#development">Development</a></li>
 </ul>
 </li>
-<li><a href="#usage">Usage</a><ul>
-<li><a href="#options-example">Options Example</a></li>
-<li><a href="#properties-example">Properties Example</a></li>
-<li><a href="#prototypes-example">Prototypes Example</a></li>
-<li><a href="#objns-example">objNs Example</a></li>
+<li><a href="#usage-utilcreate">Usage utilCreate()</a><ul>
+<li><a href="#ns">ns</a></li>
+<li><a href="#options">options</a></li>
+<li><a href="#prototypes">prototypes</a></li>
+<li><a href="#properties">properties</a></li>
+</ul>
+</li>
+<li><a href="#utilcreate-function">utilCreate object function</a><ul>
+<li><a href="#">.objIni()</a></li>
+<li><a href="#">._()</a></li>
+<li><a href="#">.objSet()</a></li>
+<li><a href="#">.objData()</a></li>
+<li><a href="#">.objClone()</a></li>
+<li><a href="#">.objNs()</a></li>
 </ul>
 </li>
 <li><a href="#links">Links</a></li>
 </ul>
-<h2>Getting Started</h2><h3>NodeJS</h3><p>Use the Node Package Manager (npm) for install crisp-create</p>
-<pre class="prettyprint source"><code>npm install crisp-create</code></pre><p>or use all of OpenCrisp Utils</p>
-<pre class="prettyprint source"><code>npm install crisp-util</code></pre><h3>Browsers</h3><pre class="prettyprint source lang-html"><code>&lt;script type=&quot;text/javascript&quot; src=&quot;dist/crisp-create.min.js&quot;>&lt;/script></code></pre><h2>Usage</h2><pre class="prettyprint source lang-javascript"><code>Crisp.utilCreate().objIni();</code></pre><h3>Options Example</h3><pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
+<h2>Getting Started</h2><h3>Server-Nodes</h3><p>Use <a href="https://www.npmjs.org">Node Package Manager (npm)</a> to install <code>crisp-create</code> for <a href="https://nodejs.org/">Node.js</a> and <a href="https://iojs.org/">io.js</a></p>
+<pre class="prettyprint source"><code>$ npm install crisp-create</code></pre><pre class="prettyprint source lang-javascript"><code>// use package
+require(&quot;crisp-create&quot;);</code></pre><p>or use the <a href="https://github.com/OpenCrisp/Crisp.UtilJS">OpenCrisp UtilJS</a> wraper</p>
+<pre class="prettyprint source"><code>$ npm install crisp-util</code></pre><pre class="prettyprint source lang-javascript"><code>// use package
+require(&quot;crisp-util&quot;);</code></pre><h3>Web-Clients</h3><p>Use <a href="http://bower.io/">Bower</a> to install <code>crisp-create</code> for Browsers APP's and other front-end workflows.</p>
+<pre class="prettyprint source"><code>$ bower install crisp-create</code></pre><pre class="prettyprint source lang-html"><code>&lt;!-- use package -->
+&lt;script type=&quot;text/javascript&quot; src=&quot;dist/crisp-create.min.js&quot;>&lt;/script></code></pre><p>or use the <a href="https://github.com/OpenCrisp/Crisp.UtilJS">OpenCrisp UtilJS</a> wraper</p>
+<pre class="prettyprint source"><code>$ bower install crisp-util</code></pre><pre class="prettyprint source lang-html"><code>&lt;!-- use package -->
+&lt;script type=&quot;text/javascript&quot; src=&quot;dist/crisp-util.min.js&quot;>&lt;/script></code></pre><h3>Development</h3><p>Use <a href="https://git-scm.com/">Git</a> to clone <a href="https://github.com/OpenCrisp/Crisp.CreateJS">Crisp.CreateJS from GitHub</a> to develop the repository with <a href="http://gruntjs.com/">Grunt</a></p>
+<pre class="prettyprint source"><code># Clone:
+$ git clone https://github.com/OpenCrisp/Crisp.CreateJS.git
+
+# Build: test, concat, test, minify, test
+$ grunt
+
+# Test: original sourcecode for developer (included in build)
+$ grunt t
+
+# Run all test-scripts on Unix
+$ sh grunt-tests.sh</code></pre><h2>Usage utilCreate()</h2><p>How to use <code>utilCreate( option )</code> function in JavaScript.</p>
+<pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
+    ns: []
+    options: {},
+    prototypes: {},
+    properties: {}
+});</code></pre><h3>ns</h3><pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
+    ns: ['util.event']
+}).objIni();
+
+myObject.objNs('util.event');   // true
+myObject.xTo();                 // '{}'</code></pre><h3>options</h3><pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
     options: {
         a: { proWri: true }
     }
 }).objIni({ a: 'A' });
 
 myObject._('a'); // 'A'
-myObject.xTo();  // '{}'</code></pre><h3>Properties Example</h3><pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
+myObject.xTo();  // '{}'</code></pre><h3>properties</h3><pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
     properties: {
         b: {
             proEnu: true,
@@ -90,21 +129,54 @@ myObject.xTo();  // '{}'</code></pre><h3>Properties Example</h3><pre class="pret
 }).objIni();
 
 myObject.b;      // 'B'
-myObject.xTo();  // '{&quot;b&quot;:&quot;B&quot;}'</code></pre><h3>Prototypes Example</h3><pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
+myObject.xTo();  // '{&quot;b&quot;:&quot;B&quot;}'</code></pre><h3>prototypes</h3><pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
     prototypes: {
         c: function() { return 'C'; }
     }
 }).objIni();
 
 myObject.c();    // 'C'
-myObject.xTo();  // '{}'</code></pre><h3>objNs Example</h3><pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate().objIni();
-myObject.objNs('util.create');    // true</code></pre><p>'util.create' is an default namespace</p>
+myObject.xTo();  // '{}'</code></pre><h2>utilCreate object function</h2><h3>.objIni()</h3><p>How to use <code>.objIni( option )</code> function on utilCreate object.</p>
+<pre class="prettyprint source lang-javascript"><code>var myObject = Crisp.utilCreate({
+  options: {
+    test: {}
+  }
+}).objIni({
+    test: 0
+});
+
+myObject._('test');     // 0</code></pre><h3>._()</h3><p>How to use <code>._( name OR option )</code> function on utilCreate object.</p>
+<pre class="prettyprint source lang-javascript"><code>// get the value of `test`
+myObject._('test');
+// or with option
+myObject._({ name: 'test' });
+
+// returns preset if option is undefined
+myObject._({ name: 'test', preset: 0 });
+// or preset of function
+myObject._({ name: 'test', preset: function() { return 0; } });
+
+// returns preset if option is undefined and save the value on option
+myObject._({ name: 'test', insert: true, preset: 0 });
+// or preset of function
+myObject._({ name: 'test', insert: true, preset: function() { return 0; } });</code></pre><h3>.objSet()</h3><p>How to use <code>.objSet( name, value )</code> function on utilCreate object.</p>
+<pre class="prettyprint source lang-javascript"><code>myObject.objSet('test', 1 );</code></pre><h3>.objData()</h3><p>How to use <code>.objData( option )</code> function on utilCreate object.</p>
+<pre class="prettyprint source lang-javascript"><code>myObject.objData({
+    a: 'A'
+});
+
+myObject.a;  // 'A'</code></pre><h3>.objClone()</h3><p>How to use <code>.objClone()</code> function on utilCreate object.</p>
+<pre class="prettyprint source lang-javascript"><code>var cloneObject = myObject.objClone();</code></pre><h3>.objNs()</h3><p>How to use <code>.objNs( name )</code> function on utilCreate object.</p>
+<pre class="prettyprint source lang-javascript"><code>myObject.objNs('util.create');  // true</code></pre><blockquote>
+<p>'util.create' is an default namespace</p>
+</blockquote>
 <h2>Links</h2><ul>
-<li><a href="http://opencrisp.wca.at/docs/module-CreateJS.html">Online Crisp.CreateJS module Documentation</a></li>
-<li><a href="http://opencrisp.wca.at/tutorials/CreateJS_test.html">More Examples on opencrisp.wca.at</a></li>
-<li><a href="https://github.com/OpenCrisp/Crisp.CreateJS">Repository on GitHub.com</a></li>
-<li><a href="https://www.npmjs.com/package/crisp-create">npm package on npm.com</a></li>
-<li><a href="https://travis-ci.org/OpenCrisp/Crisp.CreateJS">Build History on Travis-ci.org</a></li>
+<li><a href="https://github.com/OpenCrisp/Crisp.CreateJS">Repository</a></li>
+<li><a href="http://opencrisp.wca.at/tutorials/CreateJS_test.html">More examples</a></li>
+<li><a href="http://opencrisp.wca.at/docs/module-CreateJS.html">Module documentation</a></li>
+<li><a href="https://www.npmjs.com/package/crisp-create">Node package manager</a></li>
+<li><a href="https://www.versioneye.com/nodejs/crisp-create">Version monitoring</a></li>
+<li><a href="https://travis-ci.org/OpenCrisp/Crisp.CreateJS">Build history</a></li>
 </ul></article>
     </section>
 
@@ -122,7 +194,7 @@ myObject.objNs('util.create');    // true</code></pre><p>'util.create' is an def
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Thu Aug 13 2015 22:55:08 GMT+0200 (CEST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Wed Aug 19 2015 23:39:09 GMT+0200 (CEST)
 </footer>
 
 <script> prettyPrint(); </script>

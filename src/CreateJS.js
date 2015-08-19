@@ -1,10 +1,17 @@
 
 /**
- * # Crisp.CreateJS
+ * Crisp.CreateJS
  * represent Class Design-Pattersn for JavaScript includet multible namespaces, options and functions
+ * 
  * @namespace util.create
  * 
  * @tutorial {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html|use CreateJS}
+ *
+ * @example
+ * // create a new object
+ * // inherit default util.create namespace with options and prototypes
+ * // initialize the new object 
+ * var myObject = Crisp.utilCreate().objIni();
  */
 
 (function($$) {
@@ -87,7 +94,7 @@
     /**
      * defineProperty with Crisp style to called object
      * 
-     * @private
+     * private
      * @memberOf util.create
      * 
      * @param  {external:String}            name
@@ -240,7 +247,6 @@
     }
 
 
-
     function objDataEach( item, name ) {
         var data = this.data[name];
 
@@ -250,21 +256,15 @@
     }
 
 
-
-    /**
-     * {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html|use CreateJS}
-     * 
-     * @module CreateJS
-     */
     $$.ns('util.create').prototypes = {
 
         /**
          * initialice newBase
-         * 
+         * @protected
          * @param  {external:Object} option
          * @return {newBase}
          *
-         * @memberOf module:CreateJS.prototype
+         * @memberOf util.create.prototype
          */
         objIni: function( option ) {
             var create = this._('create');
@@ -288,7 +288,7 @@
          * @this {newBase}
          * @return {*}
          *
-         * @memberOf module:CreateJS.prototype
+         * @memberOf util.create.prototype
          */
         _: function( option ) {
             var value, name;
@@ -322,7 +322,7 @@
          * @this {newBase}
          * @return {newBase}
          *
-         * @memberOf module:CreateJS.prototype
+         * @memberOf util.create.prototype
          */
         objSet: function( name, value ) {
             return optionValue.call( this, optionName( name ), value );
@@ -336,7 +336,7 @@
          * @this {newBase}
          * @return {newBase}
          *
-         * @memberOf module:CreateJS.prototype
+         * @memberOf util.create.prototype
          */
         objData: function( data ) {
             return ( this.objNs('util.props') ? this : data ).xEach({
@@ -354,7 +354,7 @@
          * @this {newBase}
          * @return {newBase} Clone of newBase
          *
-         * @memberOf module:CreateJS.prototype
+         * @memberOf util.create.prototype
          * 
          * @tutorial {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html#objClone}
          * 
@@ -370,7 +370,7 @@
          * @param  {external:String} ns name string of namespace
          * @return {external:Boolean}
          * 
-         * @memberOf module:CreateJS.prototype
+         * @memberOf util.create.prototype
          * 
          * @tutorial {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html#objNs}
          *
@@ -478,5 +478,21 @@
 
         return object;
     };
+
+
+
+    /**
+     * create a new object and inherit options
+     * 
+     * @module CreateJS
+     * 
+     * @tutorial  {@link http://opencrisp.wca.at/tutorials/CreateJS_test.html}
+     * @see {@link util.event|use the namespace of Crisp.EventJS for inherit with Crisp.utilCreate()}
+     * @see {@link util.path|use the namespace of Crisp.PathJS for inherit with Crisp.utilCreate()}
+     *
+     * @example
+     * var myObject = Crisp.utilCreate()
+     */
+
 
 }(Crisp));
