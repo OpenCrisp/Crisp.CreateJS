@@ -1,0 +1,32 @@
+{
+    "name": "crisp-create",
+    "main": "dist/crisp-create.js",
+    "version": "0.2.1",
+    "homepage": "http://opencrisp.wca.at",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/OpenCrisp/Crisp.CreateJS.git"
+    },
+    "authors": [
+        "Fabian Schmid <fabian.schmid@wca.at>"
+    ],
+    "description": "represent a Class design pattern for JavaScript included multible namespaces, options and functions",
+    "moduleType": [
+        "globals"
+    ],
+    "keywords": [
+        "OpenCrisp", 
+        "async", 
+        "option", 
+        "class", 
+        "inherid"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
