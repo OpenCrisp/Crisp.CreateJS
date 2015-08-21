@@ -1,7 +1,7 @@
 {
     "name": "crisp-create",
     "main": "dist/crisp-create.js",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "homepage": "http://opencrisp.wca.at",
     "repository": {
         "type": "git",

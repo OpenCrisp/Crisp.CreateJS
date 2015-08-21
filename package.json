@@ -2,9 +2,8 @@
 	"name": "crisp-create",
 	"title": "OpenCrisp CreateJS",
 	"description": "represent a Class design pattern for JavaScript included multible namespaces, options and functions",
-	"version": "0.2.1",
+	"version": "0.2.2",
     "main": "./dist/crisp-create.js",
-	"homepage": "http://opencrisp.wca.at",
 	"author": {
 		"name": "Fabian Schmid",
 		"email": "fabian.schmid@wca.at",
@@ -46,5 +45,11 @@
         "grunt-createunit": "~0.0.3",
         "grunt-jsdoc": "~0.6.7"
 	},
-	"keywords": ["OpenCrisp", "async", "option", "class", "inherid"]
+	"keywords": [
+        "OpenCrisp", 
+        "async", 
+        "option", 
+        "class", 
+        "inherid"
+    ]
 }
