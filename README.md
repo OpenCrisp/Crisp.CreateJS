@@ -24,12 +24,9 @@ var cloneObject = myObject.objClone();
     * [Server-Nodes](#server-nodes)
     * [Web-Clients](#web-clients)
     * [Development](#development)
-  * [Usage utilCreate()](#usage-utilcreate)
-    * [ns](#ns)
-    * [options](#options)
-    * [prototypes](#prototypes)
-    * [properties](#properties)
-  * [utilCreate object function](#utilcreate-object-function)
+  * [Usage](#usage)
+    * [Crisp.utilCreate()](#crisputilcreate)
+  * [CreateJS function](#createjs-function)
     * [.objIni()](#objini)
     * [._()](#_)
     * [.objSet()](#objset)
@@ -93,8 +90,11 @@ Use [Git](https://git-scm.com/) to clone [Crisp.CreateJS from GitHub](https://gi
     # Run all test-scripts on Unix
     $ sh grunt-tests.sh
 
-## Usage utilCreate()
-How to use `utilCreate( option )` function in JavaScript.
+## Usage
+How to use `Crisp.CreateJS` function in JavaScript.
+
+### Crisp.utilCreate()
+How to use `Crisp.utilCreate( option )` with `util.create` namespace.
 
 ```javascript
 var myObject = Crisp.utilCreate({
@@ -105,7 +105,14 @@ var myObject = Crisp.utilCreate({
 });
 ```
 
-### ns
+ * **option**
+   * [**_ns_** - inherit namespace configuration](#optionns-utilcreate)
+   * [**_options_** - add property options](#optionoptions-utilcreate)
+   * [**_properties_** - add property items or functions](#optionproperties-utilcreate)
+   * [**_prototypes_** - add prototype functions](#optionprototypes-utilcreate)
+
+> #### option.ns utilCreate()
+
 ```javascript
 var myObject = Crisp.utilCreate({
     ns: ['util.event']
@@ -115,7 +122,8 @@ myObject.objNs('util.event');   // true
 myObject.xTo();                 // '{}'
 ```
 
-### options
+> #### option.options utilCreate()
+
 ```javascript
 var myObject = Crisp.utilCreate({
     options: {
@@ -127,7 +135,8 @@ myObject._('a'); // 'A'
 myObject.xTo();  // '{}'
 ```
 
-### properties
+> #### option.properties utilCreate()
+
 ```javascript
 var myObject = Crisp.utilCreate({
     properties: {
@@ -142,7 +151,8 @@ myObject.b;      // 'B'
 myObject.xTo();  // '{"b":"B"}'
 ```
 
-### prototypes
+> #### option.prototypes utilCreate()
+
 ```javascript
 var myObject = Crisp.utilCreate({
     prototypes: {
@@ -154,7 +164,7 @@ myObject.c();    // 'C'
 myObject.xTo();  // '{}'
 ```
 
-## utilCreate object function
+## CreateJS function
 
 ### .objIni()
 How to use `.objIni( option )` function on utilCreate object.
