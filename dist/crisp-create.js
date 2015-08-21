@@ -1,5 +1,4 @@
-/*! OpenCrisp CreateJS - v0.2.1 - 2015-08-19
-* http://opencrisp.wca.at
+/*! OpenCrisp CreateJS - v0.2.3 - 2015-08-21
 * Copyright (c) 2015 Fabian Schmid; Licensed MIT */
 (function($$) {
 
@@ -326,13 +325,15 @@
          * @memberOf util.create.prototype
          */
         objData: function( data ) {
-            return ( this.objNs('util.props') ? this : data ).xEach({
+            ( this.objNs('util.props') ? this : data ).xEach({
                 self: {
                     obj: this,
                     data: data
                 },
                 success: objDataEach
             });
+
+            return this;
         },
 
         /**

@@ -191,6 +191,18 @@ exports['utilCreate inherit'] = function(assert) {
     done();
 };
 
+// ## objData
+exports['utilCreate objData'] = function(assert) {
+    var done = assert.done || assert.async();
+    assert.expect(1);
+
+    var myObject = Crisp.utilCreate().objIni().objData({ a: 'A' });
+
+    assert.strictEqual( myObject.xTo(), '{"a":"A"}' );
+
+    done();
+};
+
 // ## objNs
 exports['utilCreate objNs'] = function(assert) {
     var done = assert.done || assert.async();

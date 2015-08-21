@@ -339,13 +339,15 @@
          * @memberOf util.create.prototype
          */
         objData: function( data ) {
-            return ( this.objNs('util.props') ? this : data ).xEach({
+            ( this.objNs('util.props') ? this : data ).xEach({
                 self: {
                     obj: this,
                     data: data
                 },
                 success: objDataEach
             });
+
+            return this;
         },
 
         /**
