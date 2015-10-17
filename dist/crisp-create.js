@@ -1,4 +1,4 @@
-/*! OpenCrisp CreateJS - v0.2.3 - 2015-08-21
+/*! OpenCrisp CreateJS - v0.2.4 - 2015-10-17
 * Copyright (c) 2015 Fabian Schmid; Licensed MIT */
 (function($$) {
 
