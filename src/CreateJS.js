@@ -34,6 +34,18 @@
     var defaultSeperator = "__";
 
     /**
+     * allow redefine prototype functions
+     *
+     * @privale
+     * @memberOf util.create
+     * @type {external:Array}
+     * 
+     * @example
+     * prototypeRedefine; // ['toString','valueOf']
+     */
+    var prototypeRedefine = ['toString','valueOf'];
+
+    /**
      * global cache for utilCreate(once)
      * @private
      * @type {external:Object}
@@ -55,7 +67,7 @@
      * @throws {Error} If [this.hasOwnProperty( name )]
      */
     function inheritTest( name ) {
-        if ( this.prototype[ name ] && name !== "toString" ) {
+        if ( this.prototype[ name ] && prototypeRedefine.indexOf( name ) === -1 ) {
             // console.crisp("error", "Redefined prototype " + name );
             throw new Error("Redefined prototype " + name );
         }

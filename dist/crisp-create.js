@@ -1,4 +1,4 @@
-/*! OpenCrisp CreateJS - v0.2.4 - 2015-10-17
+/*! OpenCrisp CreateJS - v0.2.6 - 2015-10-31
 * Copyright (c) 2015 Fabian Schmid; Licensed MIT */
 (function($$) {
 
@@ -18,6 +18,18 @@
      * defaultSeperator; // '__'
      */
     var defaultSeperator = "__";
+
+    /**
+     * allow redefine prototype functions
+     *
+     * @privale
+     * @memberOf util.create
+     * @type {external:Array}
+     * 
+     * @example
+     * prototypeRedefine; // ['toString','valueOf']
+     */
+    var prototypeRedefine = ['toString','valueOf'];
 
     /**
      * global cache for utilCreate(once)
@@ -41,7 +53,7 @@
      * @throws {Error} If [this.hasOwnProperty( name )]
      */
     function inheritTest( name ) {
-        if ( this.prototype[ name ] && name !== "toString" ) {
+        if ( this.prototype[ name ] && prototypeRedefine.indexOf( name ) === -1 ) {
             // console.crisp("error", "Redefined prototype " + name );
             throw new Error("Redefined prototype " + name );
         }

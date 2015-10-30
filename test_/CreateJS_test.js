@@ -214,3 +214,43 @@ exports['utilCreate objNs'] = function(assert) {
 
     done();
 };
+
+// ## redefine prototype
+exports['utilCreate redefined toString'] = function(assert) {
+    var done = assert.done || assert.async();
+    assert.expect(3);
+    
+    var myObject = Crisp.utilCreate({
+        prototypes: {
+            'toString': function() {
+                return 'A';
+            }
+        }
+    }).objIni();
+
+    assert.ok( myObject.toString instanceof Function );
+    assert.strictEqual( myObject.toString(), 'A' );
+    assert.deepEqual( myObject.xTo(), '{}' );
+
+    done();
+};
+
+
+exports['utilCreate redefined valueOf'] = function(assert) {
+    var done = assert.done || assert.async();
+    assert.expect(3);
+    
+    var myObject = Crisp.utilCreate({
+        prototypes: {
+            'valueOf': function() {
+                return 'A';
+            }
+        }
+    }).objIni();
+
+    assert.ok( myObject.valueOf instanceof Function );
+    assert.strictEqual( myObject.valueOf(), 'A' );
+    assert.deepEqual( myObject.xTo(), '{}' );
+
+    done();
+};
