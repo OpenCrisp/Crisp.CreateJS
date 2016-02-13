@@ -149,53 +149,6 @@
 
 
 
-    function utilPropertiesUnit( option, name ) {
-        utilProperty.call( this, name, option );
-    }
-    
-    function utilPropertiesMultiple( options ) {
-        options.xEach({
-            self: this,
-            success: utilPropertiesUnit
-        });
-    }
-
-    function utilProperties( properties ) {
-        properties.xEach({
-            self: this,
-            success: utilPropertiesMultiple
-        });
-    }
-
-
-
-
-
-    function utilOptionsUnit( option, name ) {
-        utilProperty.call( this, optionName( name ), option );
-    }
-    
-    function utilOptionsMultiple( options ) {
-        options.xEach({
-            self: this,
-            success: utilOptionsUnit
-        });
-    }
-
-    function utilOptions( options ) {
-        options.xEach({
-            self: this,
-            success: utilOptionsMultiple
-        });
-    }
-
-
-
-
-
-
-
-
 
     function optionName( name ) {
         return defaultSeperator.concat( name, defaultSeperator );
@@ -257,6 +210,53 @@
 
         return value;
     }
+
+
+
+
+    function utilPropertiesUnit( option, name ) {
+        utilProperty.call( this, name, option );
+    }
+    
+    function utilPropertiesMultiple( options ) {
+        options.xEach({
+            self: this,
+            success: utilPropertiesUnit
+        });
+    }
+
+    function utilProperties( properties ) {
+        properties.xEach({
+            self: this,
+            success: utilPropertiesMultiple
+        });
+    }
+
+
+
+
+
+    function utilOptionsUnit( option, name ) {
+        utilProperty.call( this, optionName( name ), option );
+    }
+    
+    function utilOptionsMultiple( options ) {
+        options.xEach({
+            self: this,
+            success: utilOptionsUnit
+        });
+    }
+
+    function utilOptions( options ) {
+        options.xEach({
+            self: this,
+            success: utilOptionsMultiple
+        });
+    }
+
+
+
+
 
 
     function objDataEach( item, name ) {

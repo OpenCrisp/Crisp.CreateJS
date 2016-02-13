@@ -1,5 +1,5 @@
-/*! OpenCrisp CreateJS - v0.2.8 - 2015-12-26
-* Copyright (c) 2015 Fabian Schmid; Licensed MIT */
+/*! OpenCrisp CreateJS - v0.2.8 - 2016-02-13
+* Copyright (c) 2016 Fabian Schmid; Licensed MIT */
 (function($$) {
 
     /**
@@ -135,53 +135,6 @@
 
 
 
-    function utilPropertiesUnit( option, name ) {
-        utilProperty.call( this, name, option );
-    }
-    
-    function utilPropertiesMultiple( options ) {
-        options.xEach({
-            self: this,
-            success: utilPropertiesUnit
-        });
-    }
-
-    function utilProperties( properties ) {
-        properties.xEach({
-            self: this,
-            success: utilPropertiesMultiple
-        });
-    }
-
-
-
-
-
-    function utilOptionsUnit( option, name ) {
-        utilProperty.call( this, optionName( name ), option );
-    }
-    
-    function utilOptionsMultiple( options ) {
-        options.xEach({
-            self: this,
-            success: utilOptionsUnit
-        });
-    }
-
-    function utilOptions( options ) {
-        options.xEach({
-            self: this,
-            success: utilOptionsMultiple
-        });
-    }
-
-
-
-
-
-
-
-
 
     function optionName( name ) {
         return defaultSeperator.concat( name, defaultSeperator );
@@ -243,6 +196,53 @@
 
         return value;
     }
+
+
+
+
+    function utilPropertiesUnit( option, name ) {
+        utilProperty.call( this, name, option );
+    }
+    
+    function utilPropertiesMultiple( options ) {
+        options.xEach({
+            self: this,
+            success: utilPropertiesUnit
+        });
+    }
+
+    function utilProperties( properties ) {
+        properties.xEach({
+            self: this,
+            success: utilPropertiesMultiple
+        });
+    }
+
+
+
+
+
+    function utilOptionsUnit( option, name ) {
+        utilProperty.call( this, optionName( name ), option );
+    }
+    
+    function utilOptionsMultiple( options ) {
+        options.xEach({
+            self: this,
+            success: utilOptionsUnit
+        });
+    }
+
+    function utilOptions( options ) {
+        options.xEach({
+            self: this,
+            success: utilOptionsMultiple
+        });
+    }
+
+
+
+
 
 
     function objDataEach( item, name ) {
