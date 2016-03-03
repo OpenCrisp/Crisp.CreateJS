@@ -1,4 +1,4 @@
-/*! OpenCrisp CreateJS - v0.2.9 - 2016-02-22
+/*! OpenCrisp CreateJS - v0.2.10 - 2016-03-03
 * Copyright (c) 2016 Fabian Schmid; Licensed MIT */
 (function($$) {
 
@@ -72,17 +72,11 @@
     }
     
     function utilPrototypeMultiple( options ) {
-        options.xEach({
-            self: this,
-            success: utilPrototypeUnit
-        });
+        options.xEach({ self: this }, utilPrototypeUnit );
     }
 
     function utilPrototype( prototypes ) {
-        prototypes.xEach({
-            self: this,
-            success: utilPrototypeMultiple
-        });
+        prototypes.xEach({ self: this }, utilPrototypeMultiple );
     }
 
 
@@ -149,7 +143,6 @@
         
         // console.crisp("debug", "insert/update option "+name+" in Object ");
         this[ name ] = value;
-
         return this;
     }
 
@@ -159,18 +152,11 @@
     }
 
     function optionListMultiple( options ) {
-        options.xEach({
-            self: this,
-            success: optionListUnit
-        });
+        options.xEach({ self: this }, optionListUnit );
     }
 
     function optionList( options ) {
-        [].xAdd( options ).xEach({
-            self: this,
-            success: optionListMultiple
-        });
-
+        [].xAdd( options ).xEach({ self: this }, optionListMultiple );
         return this;
     }
 
@@ -205,17 +191,11 @@
     }
     
     function utilPropertiesMultiple( options ) {
-        options.xEach({
-            self: this,
-            success: utilPropertiesUnit
-        });
+        options.xEach({ self: this }, utilPropertiesUnit );
     }
 
     function utilProperties( properties ) {
-        properties.xEach({
-            self: this,
-            success: utilPropertiesMultiple
-        });
+        properties.xEach({ self: this }, utilPropertiesMultiple );
     }
 
 
@@ -227,17 +207,11 @@
     }
     
     function utilOptionsMultiple( options ) {
-        options.xEach({
-            self: this,
-            success: utilOptionsUnit
-        });
+        options.xEach({ self: this }, utilOptionsUnit );
     }
 
     function utilOptions( options ) {
-        options.xEach({
-            self: this,
-            success: utilOptionsMultiple
-        });
+        options.xEach({ self: this }, utilOptionsMultiple );
     }
 
 
@@ -337,13 +311,15 @@
          * @memberOf util.create.prototype
          */
         objData: function( data ) {
-            ( this.objNs('util.props') ? this : data ).xEach({
-                self: {
-                    obj: this,
-                    data: data
+            ( this.objNs('util.props') ? this : data ).xEach(
+                {
+                    self: {
+                        obj: this,
+                        data: data
+                    }
                 },
-                success: objDataEach
-            });
+                objDataEach
+            );
 
             return this;
         },
@@ -456,10 +432,10 @@
             pt: []      // multiple inherit prototypes
         };
 
-        ns = ['util.create'].xAdd( option.ns ).xEach({
-            self: inherit,
-            success: createNsEach
-        });
+        ns = ['util.create'].xAdd( option.ns ).xEach(
+            { self: inherit },
+            createNsEach
+        );
 
         utilPrototype.call( Base, inherit.pt.xAdd( option.prototypes ) );
 
