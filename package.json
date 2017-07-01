@@ -2,7 +2,7 @@
 	"name": "crisp-create",
 	"title": "OpenCrisp CreateJS",
 	"description": "represent a Class design pattern for JavaScript included multible namespaces, options and functions",
-	"version": "0.2.12",
+	"version": "0.2.13",
     "main": "./dist/crisp-create.js",
 	"author": {
 		"name": "Fabian Schmid",
@@ -35,14 +35,14 @@
 	"devDependencies": {
         "crisp-event": "latest",
         "grunt": "~1.0.1",
-        "grunt-contrib-clean": "~1.0.0",
-        "grunt-contrib-concat": "~1.0.0",
-        "grunt-contrib-jshint": "~1.0.0",
+        "grunt-contrib-clean": "~1.1.0",
+        "grunt-contrib-concat": "~1.0.1",
+        "grunt-contrib-jshint": "~1.1.0",
         "grunt-contrib-nodeunit": "~1.0.0",
-        "grunt-contrib-qunit": "~1.2.0",
-        "grunt-contrib-uglify": "~2.0.0",
+        "grunt-contrib-qunit": "~2.0.0",
+        "grunt-contrib-uglify": "~3.0.1",
         "grunt-contrib-watch": "~1.0.0",
-        "grunt-createunit": "~1.0.4",
+        "grunt-createunit": "~1.0.5",
         "grunt-jsdoc": "~2.1.0"
 	},
 	"keywords": [
